@@ -9,8 +9,8 @@ export class HeaderComponent implements OnInit {
 
   isIn = false;   // store state
   toggleState() { // click handler
-      let bool = this.isIn;
-      this.isIn = bool === false ? true : false; 
+    let bool = this.isIn;
+    this.isIn = bool === false ? true : false; 
   }
 
   constructor() { }

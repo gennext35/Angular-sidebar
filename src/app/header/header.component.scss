@@ -4,18 +4,49 @@ header {
         justify-content: space-between;
         padding: 10px 15px;
         .hambergerIcon {
-            width: 40px;
-            position: relative;
+            height: 5px;
+            width: 50px;
+            position: absolute;
+            border-radius: 50px;
+            background-color: #4A2545;
+            -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+            transition: all ease 0.5s;
+            top: 30px;
+            right: -10px;
+            z-index: 999;
             cursor: pointer;
-            z-index: 99;
-            span {
-                background: #494949;
-                height: 5px;
-                border-radius: 5px;
-                display: block;
-                &:nth-child(2) {
-                    margin: 5px 0px;
-                }
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                height: inherit;
+                border-radius: inherit;
+                background-color: inherit;
+                margin: auto;
+                width: 50%;
+                transition: all ease 0.5s;
+            }
+            &::before {
+                top: -15px;
+                left: 0;
+                transform-origin: left;
+            }
+            &::after {
+                bottom: -15px;
+                right: 0;
+                transform-origin: right;
+            }
+        }
+        .in {
+            transform: translate(-50%, -50%) rotate(135deg);
+            &::before {
+                top: 0;
+                transform: translateX(100%) rotate(-90deg);
+            }
+            &::after {
+                bottom: 0;
+                transform: translateX(-100%) rotate(-90deg);
             }
         }
     }
